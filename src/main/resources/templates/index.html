@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<title>Titulo</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+	<h1>Iniciar sesión</h1>
+	
+	<form class="form-control" action="/user/validar" method="post" >
+	
+			
+		<p>Introduce nombre de usuario </p>
+		<input class="form-control" name="usuario" placeholder="Nombre de usuario" type="text" required="required"/>
+		
+		<p>Introduce contraseña </p>
+		<input class="form-control" name="pass" placeholder="Contraseña" type="password" required="required"/>
+		
+		<button class="btn btn-info">Enviar</button>
+	
+	</form> 
+	
+	<div th:if="${mensaje !=null}" class="alert alert-danger"> <!-- Solo se muestra el mensaje si el mensaje no es null  -->
+		<span th:text="${mensaje}"></span> 
+	</div>
+	
+	
+</body>
+</html>
